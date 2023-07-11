@@ -1,0 +1,65 @@
+﻿@model ASPNETMVCCRUD.Models.UpdateEmployeeViewModel
+@{
+}
+<h1 align="center">Edit Employee Details</h1>
+<form method="post" action="View" class="mt-5">
+    
+    <div class="mb-3">
+        <label for="" class="form-label"><b>Employee Id:</b></label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label"><b>First Name:</b></label>
+        <input type="text" class="form-control" asp-for="Firstname" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label"><b>Last Name: </b></label>
+        <input type="text" class="form-control" asp-for="Lastname" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="education"><b>Choose your Education Qualification:</b></label>
+        <select name="education" id="education" asp-for="Education" required>
+            <option value="Engineering">Engineering</option>
+            <option value="Medical">Medical</option>
+            <option value="Bsc">B.Sc</option>
+            <option value="Bcom">B.Com</option>
+            <option value="BA">B.A.</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label"><b>Choose your Age:</b></label>
+        <input type="number" class="form-control" asp-for="Age" min="18" max="60" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label"><b>Gender:</b></label>
+        <input type="radio" id="gender" name="gender" value="Male" asp-for="Gender" required /> Male
+        <input type="radio" id="gender" name="gender" value="Female" asp-for="Gender" required /> Female
+    </div>
+
+
+
+    <div class="mb-3">
+        <label for="" class="form-label"><b>Hobbies: </b></label>
+        <input type="text" class="form-control" asp-for="Hobbies" required>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="" class="form-label"><b>Comments:</b></label>
+        <br />
+        <textarea id="details" name="details" rows="4" cols="50" required></textarea>
+    </div>
+
+    
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="submit" class="btn btn-danger"
+            asp-action="Delete"
+            asp-controller="Employees">Delete</button>
+</form>
